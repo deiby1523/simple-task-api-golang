@@ -44,7 +44,7 @@ func (h *TaskHandler) HandleTasks(w http.ResponseWriter, r *http.Request) {
 		// Decode request body into Task model
 		var task model.Task
 		if err := json.NewDecoder(r.Body).Decode(&task); err != nil {
-			http.Error(w, err.Error()+"LOL", http.StatusBadRequest)
+			http.Error(w, err.Error(), http.StatusBadRequest)
 			return
 		}
 
